@@ -1,0 +1,57 @@
+# yii console commands
+/yii_test
+/yii_test.bat
+
+# phpstorm project files
+.idea
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+/vendor
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
+# vagrant runtime
+/.vagrant
+
+/app_image/uploads
+/composer.lock
+/common/config/db.php
+common/config/db.php
+/frontend/web/uploads/store/MerchantProfile
+/frontend/web/uploads/store/SalesmanProfile
+/frontend/web/uploads/store/ShopProfile
+/frontend/web/uploads/store/CustomerProfile
+/frontend/web/uploads/store/DistributorProfile
+/frontend/web/uploads/store/FavouredCustomerProfile
+/frontend/web/uploads/store/FranchiseeProfile
+/frontend/web/uploads/store/MerchantProfile
+/frontend/web/uploads/store/SalesmanProfile
+/frontend/web/uploads/store/ShopProfile
+/frontend/web/uploads/store/WechatSettingsForm
+/frontend/web/uploads
+/frontend/web/assets/*
+/backend/web/assets/*
+/backend/web/upload/*
+/app_eshop/web/assets/*
+/app_eshop/web/upload
+
