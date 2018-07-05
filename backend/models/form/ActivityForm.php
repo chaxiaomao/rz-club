@@ -74,12 +74,13 @@ class ActivityForm extends \yii\base\Model
     public function upload()
     {
         $this->file = UploadedFile::getInstance($this, 'file'); // 上传图片
-        $filePath = date("Y/m/", time());
+        //$filePath = date("Y/m/", time());
         $imageName = 'gh_' . time() . rand(1000, 9999);
-        $uploadPath = $this->getUploadPath($filePath);
+        $uploadPath = $this->getUploadPath();
         if ($uploadPath) {
             $this->file->saveAs($uploadPath . $imageName . '.' . $this->file->extension);
-            return IMG_HOST . '/upload/images/' . $filePath . $imageName . '.' . $this->file->extension;
+            //return IMG_HOST . '/upload/images/' . $filePath . $imageName . '.' . $this->file->extension;
+            return IMG_HOST . '/upload/images/' . $imageName . '.' . $this->file->extension;
         } else {
             Yii::info($uploadPath . "创建文件失败");
             return false;
@@ -191,7 +192,7 @@ class ActivityForm extends \yii\base\Model
         }
     }
 
-    public function getUploadPath($filePath)
+    public function getUploadPath($filePath = "")
     {
         $uploadPath = Yii::$app->basePath . '/web/upload/images/' . $filePath;
         if (!file_exists($uploadPath)) {
