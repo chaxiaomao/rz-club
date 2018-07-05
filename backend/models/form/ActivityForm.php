@@ -195,7 +195,7 @@ class ActivityForm extends \yii\base\Model
     {
         $uploadPath = Yii::$app->basePath . '/web/upload/images/' . $filePath;
         if (!file_exists($uploadPath)) {
-            if (mkdir($uploadPath, 775, true)) {
+            if (mkdir($uploadPath, '0777', true)) {
                 return $uploadPath;
             } else {
                 return false;
