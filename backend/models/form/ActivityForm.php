@@ -37,9 +37,8 @@ class ActivityForm extends \yii\base\Model
     {
         return [
             [['label_id', 'title', 'limit_count', 'cost_price', 'hold_date', 'hold_place','content', 'favor', 'forward', 'status'], 'required'],
-            [['limit_count', 'favor', 'forward', 'status'], 'integer'],
-            [['cost_price'], 'number'],
-            [['content', 'cover', 'hold_place'], 'string'],
+            [['favor', 'forward', 'status'], 'integer'],
+            [['content', 'cover', 'hold_place', 'limit_count', 'hold_date', 'cost_price'], 'string'],
             [['title'], 'string', 'max' => 255],
 //            [['file'], 'file', 'skipOnEmpty' => false, 'extensions' => 'jpg, gif, png'],
 //            [['file'], 'safe']

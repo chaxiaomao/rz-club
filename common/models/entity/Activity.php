@@ -8,7 +8,6 @@ use Yii;
  * This is the model class for table "activity".
  *
  * @property integer $id
- * @property integer $label_id
  * @property string $title
  * @property integer $limit_count
  * @property string $cost_price
@@ -42,10 +41,9 @@ class Activity extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'limit_count', 'cost_price', 'hold_date', 'hold_place', 'cover', 'content', 'favor', 'forward', 'status', 'created_at', 'updated_at'], 'required'],
-            [['limit_count', 'favor', 'forward', 'status'], 'integer'],
-            [['cost_price'], 'number'],
-            [['hold_date', 'created_at', 'updated_at'], 'safe'],
-            [['content'], 'string'],
+            [['favor', 'forward', 'status'], 'integer'],
+            [['created_at', 'updated_at'], 'safe'],
+            [['content', 'cost_price', 'hold_date', 'limit_count'], 'string'],
             [['title', 'cover', 'hold_place'], 'string', 'max' => 255],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_EXPIRE]],
         ];

@@ -48,7 +48,7 @@ $this->registerCss($css)
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'limit_count')->textInput(['type' => 'number']) ?>
+    <?= $form->field($model, 'limit_count')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'cost_price')->textInput(['maxlength' => true]) ?>
 
