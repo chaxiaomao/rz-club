@@ -19,7 +19,7 @@ class CmsBlockSearch extends CmsBlock
     {
         return [
             [['id'], 'integer'],
-            [['code', 'value', 'created_at', 'updated_at'], 'safe'],
+            [['name', 'label', 'icon', 'value', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -64,7 +64,8 @@ class CmsBlockSearch extends CmsBlock
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'code', $this->code])
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'label', $this->label])
             ->andFilterWhere(['like', 'value', $this->value]);
 
         return $dataProvider;

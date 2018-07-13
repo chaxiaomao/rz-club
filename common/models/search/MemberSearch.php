@@ -19,7 +19,7 @@ class MemberSearch extends Member
     {
         return [
             [['id', 'sex', 'age', 'status'], 'integer'],
-            [['name', 'avatar', 'openid', 'mobile', 'job', 'area', 'created_at', 'update_at'], 'safe'],
+            [['name', 'avatar', 'openid', 'mobile', 'job', 'area', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -64,7 +64,7 @@ class MemberSearch extends Member
             'age' => $this->age,
             'status' => $this->status,
             'created_at' => $this->created_at,
-            'update_at' => $this->update_at,
+            'updated_at' => $this->updated_at,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

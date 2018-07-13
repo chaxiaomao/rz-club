@@ -40,6 +40,7 @@ class Member extends \yii\db\ActiveRecord
             [['status'], 'required'],
             [['created_at', 'update_at'], 'safe'],
             [['name', 'avatar', 'openid', 'mobile', 'job', 'area'], 'string', 'max' => 255],
+            [['created_at', 'updated_at'], 'default', 'value' => date('Y-m-d H:i:s')],
         ];
     }
 

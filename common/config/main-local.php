@@ -1,5 +1,5 @@
 <?php
-define("IMG_HOST", "http://img-yii2-lte.tunnel.echomod.cn");
+define("IMG_HOST", "http://rz-img.tunnel.echomod.cn");
 return [
     'components' => [
         'db' => [

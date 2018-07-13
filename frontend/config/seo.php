@@ -24,6 +24,7 @@ return [
 
     'api/<action:[\w\-]+>' => 'api/default/<action>',
     'api/<controller:[\w\-]+>/<action:[\w\-]+>' => 'api/<controller>/<action>',
-    'api/v1/get-heart/activity/<action:[\w\-]+>' => 'api/v1/get-heart/activity/default/<action>',
+    'api/v1/rz/<action:[\w\-]+>' => 'api/v1/rz/default/<action>',
+    'api/v1/rz/activity/<action:[\w\-]+>' => 'api/v1/rz/activity/default/<action>',
 
 ];

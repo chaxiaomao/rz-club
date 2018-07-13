@@ -6,9 +6,11 @@
  * Time: 16:42
  */
 
-namespace frontend\modules\Api\modules\V1\modules\GetHeart\modules\Activity\controllers;
+namespace frontend\modules\Api\modules\V1\modules\Rz\modules\Activity\controllers;
 use common\models\entity\Activity;
 use common\models\entity\ActivityLabelRs;
+use common\models\entity\CmsBlock;
+use common\models\entity\Member;
 use common\rest\statics\OperationResult;
 use common\rest\statics\ResponseDatum;
 use Yii;
@@ -48,6 +50,37 @@ class DefaultController extends ActiveController
         ]);
         if ($data) {
             return ResponseDatum::getSuccessDatum(['message' => 'Operation completed successfully!'], $data);
+        } else {
+            return ResponseDatum::getErrorDatum(['code' => OperationResult::ERROR_404], []);
+        }
+    }
+
+    public function actionIntroduce() {
+        $label = Yii::$app->getRequest()->get("label");
+        $model = CmsBlock::find()->where(['label' => $label])->one();
+//        var_dump($label);
+        if ($model != null) {
+            return ResponseDatum::getSuccessDatum(['message' => 'Operation completed successfully!'], $model);
+        } else {
+            return ResponseDatum::getErrorDatum(['code' => OperationResult::ERROR_404], []);
+        }
+    }
+
+    public function actionUserInfo()
+    {
+        $data = json_decode(Yii::$app->getRequest()->get("userInfo"));
+        $model = new Member();
+        $model->name = $data->nickName;
+        $model->avatar = $data->avatarUrl;
+        $model->status = 1;
+        $model->save();
+    }
+
+    public function actionMembers()
+    {
+        $model = Member::find()->offset(0)->limit(10)->all();
+        if ($model != null) {
+            return ResponseDatum::getSuccessDatum(['message' => 'Operation completed successfully!'], $model);
         } else {
             return ResponseDatum::getErrorDatum(['code' => OperationResult::ERROR_404], []);
         }

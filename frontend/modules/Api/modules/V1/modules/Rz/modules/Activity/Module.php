@@ -6,12 +6,12 @@
  * Time: 10:38
  */
 
-namespace frontend\modules\Api\modules\V1\modules\GetHeart\modules\Activity;
+namespace frontend\modules\Api\modules\V1\modules\Rz\modules\Activity;
 
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'frontend\modules\Api\modules\V1\modules\GetHeart\modules\Activity\controllers';
+    public $controllerNamespace = 'frontend\modules\Api\modules\V1\modules\Rz\modules\Activity\controllers';
 
     public function init()
     {

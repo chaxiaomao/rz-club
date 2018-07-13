@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\entity\CmsBlock */
 
-$this->title = 'Create Cms Block';
+$this->title = '添加CMS';
 $this->params['breadcrumbs'][] = ['label' => 'Cms Blocks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

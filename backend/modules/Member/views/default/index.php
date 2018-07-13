@@ -16,9 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <h1><?= Html::encode($this->title) ?></h1>
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-        <p>
-            <?= Html::a('添加会员', ['create'], ['class' => 'btn btn-success']) ?>
-        </p>
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -27,18 +24,25 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 'id',
                 'name',
-                'avatar',
-                // 'openid',
-                'mobile',
+                [
+                    'attribute' => 'avatar',
+                    'format' => 'html',
+                    'value' => function ($model) {
+                        return '<a class="data-img" data-toggle="modal" data-target="#img-modal" data-id="img-modal" data-avatar="' . $model->avatar . '">' .
+                            Html::img($model->avatar) . '</a>';
+                    }
+                ],
+                 'openid',
+                // 'mobile',
                 // 'sex',
                 // 'job',
                 // 'age',
                 // 'area',
                 // 'status',
-                // 'created_at',
-                // 'update_at',
+                 'created_at',
+                 'updated_at',
 
-                ['class' => 'yii\grid\ActionColumn'],
+                ['class' => 'yii\grid\ActionColumn', 'template' => '{delete}'],
             ],
         ]); ?>
     </section>
